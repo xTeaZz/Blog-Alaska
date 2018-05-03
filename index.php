@@ -43,8 +43,47 @@
             </li>
           </ul>
         </div>
-        <!--Connection-->
+        <!--Inscription-->
         <div>
+          <button class="btn btn-outline-warning" type="button" data-toggle="modal" data-target="#sign">Inscription</button>
+          <div id="sign" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header center">
+                  Veuillez entrer vos identifiants d'Inscription
+                </div>
+                <div class="modal-body">
+                  <form method="post" action="model/sign.php">
+                    <div class="form-group">
+                      <label for="alias">Pseudo</label>
+                      <input type="text" class="form-control" name="alias" placeholder="Pseudo">
+                    </div>
+                    <div class="form-group">
+                      <label for="emailForm">Adresse Email</label>
+                      <input type="email" class="form-control" name="emailForm" aria-describedby="emailHelp" placeholder="Adresse Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="emailForm">Confirmation Adresse Email</label>
+                      <input type="email" class="form-control" name="emailForm2" aria-describedby="emailHelp" placeholder="Confirmation Adresse Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="passwordForm">Mot de Passe</label>
+                      <input type="password" class="form-control" name="passwordForm" placeholder="Mot de Passe">
+                    </div>
+                    <div class="form-group">
+                      <label for="passwordForm">Confirmation Mot de Passe</label>
+                      <input type="password" class="form-control" name="passwordForm2" placeholder="Confirmation Mot de Passe">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
+                    <input type="submit" class="btn btn-success" name="buttonValidate"></input>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!--Connection-->
           <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connection</button>
           <div id="login" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -53,21 +92,21 @@
                   Veuillez entrer vos identifiants
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form method="post" action="model/login.php">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Adresse Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse Email">
+                      <label for="alias">Pseudo</label>
+                      <input type="text" class="form-control" name="alias" placeholder="Pseudo">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Mot de Passe</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de Passe">
+                      <label for="passwordForm">Mot de Passe</label>
+                      <input type="password" class="form-control" name="passwordForm" placeholder="Mot de Passe">
                     </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
-                  <button type="submit" class="btn btn-success" data-dismiss="modal" name="button">Valider</button>
-                </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
+                    <input type="submit" class="btn btn-success" name="buttonValidate"></input>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -147,37 +186,3 @@
     </footer>
   </body>
 </html>
-
-
-<?php
-require('controller/frontend.php');
-
-if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'listPosts') {
-        listPosts();
-    }
-    elseif ($_GET['action'] == 'post') {
-        if (isset($_GET['id']) && $_GET['id'] > 0) {
-            post();
-        }
-        else {
-            echo 'Erreur : aucun identifiant de billet envoyé';
-        }
-    }
-    elseif ($_GET['action'] == 'addComment') {
-        if (isset($_GET['id']) && $_GET['id'] > 0) {
-            if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-            }
-            else {
-                echo 'Erreur : tous les champs ne sont pas remplis !';
-            }
-        }
-        else {
-            echo 'Erreur : aucun identifiant de billet envoyé';
-        }
-    }
-}
-else {
-    listPosts();
-}
