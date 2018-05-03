@@ -1,0 +1,59 @@
+/*-----General-----*/
+
+.center{
+  align-items: center;
+  justify-content: center;
+}
+
+.alignleft{
+  text-align: right;
+}
+
+.sectionmargin{
+  margin-bottom: 5em;
+}
+
+.sectionbackground{
+  background-color: #343a40;
+}
+
+/*-----Header-----*/
+
+.navbarfixed{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal-backdrop.show {
+    opacity: 0;
+    z-index: -1;
+}
+
+.modal{
+  margin-top: 8em;
+}
+
+/*-----Hero-----*/
+
+.herosection{
+  height: 100vh;
+}
+
+.hero{
+  height: 100%;
+  width: 100%;
+  background-image: url(../pictures/ChugachMountains.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.herocaption{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#rowcard{
+  justify-content: space-around;
+}
