@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="public/css/fontawesome-.min.css">
     <link rel="stylesheet" href="public/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require'model/sign.php';?>
   </head>
   <!--Body-->
   <body class="sectionbackground">
@@ -60,31 +61,31 @@
                     </div>
                     <div class="form-group">
                       <label for="emailForm">Adresse Email</label>
-                      <input type="email" class="form-control" name="emailForm" aria-describedby="emailHelp" placeholder="Adresse Email">
+                      <input type="email" class="form-control" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email">
                     </div>
                     <div class="form-group">
                       <label for="emailForm">Confirmation Adresse Email</label>
-                      <input type="email" class="form-control" name="emailForm2" aria-describedby="emailHelp" placeholder="Confirmation Adresse Email">
+                      <input type="email" class="form-control" name="mail2" aria-describedby="emailHelp" placeholder="Confirmation Adresse Email">
                     </div>
                     <div class="form-group">
                       <label for="passwordForm">Mot de Passe</label>
-                      <input type="password" class="form-control" name="passwordForm" placeholder="Mot de Passe">
+                      <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
                     </div>
                     <div class="form-group">
                       <label for="passwordForm">Confirmation Mot de Passe</label>
-                      <input type="password" class="form-control" name="passwordForm2" placeholder="Confirmation Mot de Passe">
+                      <input type="password" class="form-control" name="pass2" placeholder="Confirmation Mot de Passe">
                     </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
-                    <input type="submit" class="btn btn-success" name="buttonValidate"></input>
+                    <input type="submit" class="btn btn-success" name="buttonSign"></input>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-          <!--Connection-->
-          <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connection</button>
+          <!---->
+          <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connexion</button>
           <div id="login" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -99,12 +100,12 @@
                     </div>
                     <div class="form-group">
                       <label for="passwordForm">Mot de Passe</label>
-                      <input type="password" class="form-control" name="passwordForm" placeholder="Mot de Passe">
+                      <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
                     </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
-                    <input type="submit" class="btn btn-success" name="buttonValidate"></input>
+                    <input type="submit" class="btn btn-success" name="buttonLogin"></input>
                   </div>
                 </form>
               </div>
