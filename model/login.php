@@ -1,6 +1,6 @@
 <?php
   require 'db.php';
-  require 'index.php';
+  require '../index.php';
 
   session_start();
 
