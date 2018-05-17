@@ -1,7 +1,4 @@
-<?php
-  $post = $bdd->query('SELECT * FROM post ORDER BY id DESC');
-?>
-
+<?php require'../model/db.php'; ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <?php
@@ -10,14 +7,17 @@
     require'head.php';
     ?>
     <body>
-      <?php require'header.php' ?>
+
       <section>
         <ul>
-          <?php while($a = $post->fetch()) { ?>
-          <li><?= $a['title'] ?></li>
+          <?php $post = $db->query('SELECT * FROM post ORDER BY id DESC'); ?>
+          <?php while($p = $post->fetch()) { ?>
+          <li><a href="article.php?id=<? $p['id'] ?>"><?= $p['title'] ?></a></li>
           <?php } ?>
         </ul>
       </section>
       <?php require'footer.php'; ?>
     </body>
 </html>
+
+<?php $post = $db->query('SELECT * FROM post ORDER BY id DESC'); ?>

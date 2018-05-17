@@ -57,3 +57,10 @@
 #rowcard{
   justify-content: space-around;
 }
+
+/*-----Admin-----*/
+
+.cardtop{
+  margin-top: 5em;
+  margin-bottom: 5em;
+}

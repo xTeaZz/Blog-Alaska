@@ -1,16 +1,15 @@
 <?php
-  $post = $bdd->query('SELECT * FROM post ORDER BY id DESC');
+  require'../model/db.php';
+  require'../model/getPost.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <?php
-    $title = "Liste des episodes";
-    require'../model/db.php';
     require'head.php';
     ?>
     <body>
-      <?php require'header.php' ?>
+      
       <section>
         <h1><?= $title ?></h1>
         <p><?= $message ?></p>
