@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#episodes">Episodes<span class="sr-only"></span></a>
+          <a class="nav-link" href="view/episodes.php">Episodes<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#bio">Jean Forteroche<span class="sr-only"></span></a>
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-      <!---->
+      <!--Connection-->
       <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connexion</button>
       <div id="login" class="modal fade" role="dialog">
         <div class="modal-dialog">

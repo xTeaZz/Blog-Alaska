@@ -10,10 +10,10 @@
   <meta property="og:url" content="http://www.jonathan-cohen.com/roman/index.php" />
   <meta property="og:image" content="http://www.jonathan-cohen.com/roman/index.php" />
   <meta property="og:description" content="Billet simple pour l'Alaska Un roman de Jean Forteroche" />
-  <link rel="stylesheet" href="public/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="public/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="public/css/bootstrap.min.css">
-  <link rel="stylesheet" href="public/css/fontawesome-.min.css">
-  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="../public/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../public/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/css/fontawesome-.min.css">
+  <link rel="stylesheet" href="../public/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

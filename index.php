@@ -3,12 +3,12 @@
   <!--Head-->
   <?php
     $title = "Billet simple pour l'Alaska";
-    require'controller/head.php';
+    require'view/head.php';
   ?>
   <!--Body-->
   <body class="sectionbackground">
     <!--Header-->
-    <?php require 'controller/header.php'; ?>
+    <?php require 'view/header.php'; ?>
     <!--Hero-->
     <section class="herosection sectionmargin">
       <div class="hero">
@@ -59,14 +59,14 @@
     </section>
     <!--Contact-->
     <section id="contact" class="container sectionmargin">
-      <form>
+      <form action="model/mail.php" method="post">
         <div class="form-group">
           <label for="exampleFormControlInput1">Adresse Email</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Adresse Email">
+          <input name="mail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Adresse Email">
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Message</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Votre Message"></textarea>
+          <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Votre Message"></textarea>
         </div>
         <div class="form-group alignleft">
           <button type="submit" class="btn btn-primary" name="button">Envoyer</button>
@@ -74,6 +74,6 @@
       </form>
     </section>
     <!--Footer-->
-    <?php require'controller/footer.php'; ?>
+    <?php require'view/footer.php'; ?>
   </body>
 </html>
