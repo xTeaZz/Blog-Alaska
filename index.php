@@ -1,14 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <!--Head-->
-  <?php
-    $title = "Billet simple pour l'Alaska";
-    require'view/head.php';
-  ?>
+  <?php $title = "Billet simple pour l'Alaska"; ?>
+  <head>
+    <meta charset="utf-8">
+    <title><?= $title ?></title>
+    <meta name="description" content="Billet simple pour l'Alaska Un roman de Jean Forteroche" />
+    <!--Twitter Card data-->
+    <meta name="twitter:card" content="summary">
+    <!--Open Graph data-->
+    <meta property="og:title" content="Billet simple pour l'Alaska" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.jonathan-cohen.com/roman/index.php" />
+    <meta property="og:image" content="http://www.jonathan-cohen.com/roman/index.php" />
+    <meta property="og:description" content="Billet simple pour l'Alaska Un roman de Jean Forteroche" />
+    <link rel="stylesheet" href="public/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/fontawesome-.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
   <!--Body-->
   <body class="sectionbackground">
     <!--Header-->
-    <?php require 'view/header.php'; ?>
+    <header class="navbarfixed">
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">Billet simple pour l'Alaska</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="view/episodes.php">Episodes<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bio">Jean Forteroche<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!--Inscription-->
+        <div>
+          <button class="btn btn-outline-warning" type="button" data-toggle="modal" data-target="#sign">Inscription</button>
+          <div id="sign" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header center">
+                  Veuillez entrer vos identifiants d'Inscription
+                </div>
+                <div class="modal-body">
+                  <form method="post" action="model/sign.php">
+                    <div class="form-group">
+                      <label for="alias">Pseudo</label>
+                      <input type="text" class="form-control" name="alias" placeholder="Pseudo">
+                    </div>
+                    <div class="form-group">
+                      <label for="emailForm">Adresse Email</label>
+                      <input type="email" class="form-control" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="emailForm">Confirmation Adresse Email</label>
+                      <input type="email" class="form-control" name="mail2" aria-describedby="emailHelp" placeholder="Confirmation Adresse Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="passwordForm">Mot de Passe</label>
+                      <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
+                    </div>
+                    <div class="form-group">
+                      <label for="passwordForm">Confirmation Mot de Passe</label>
+                      <input type="password" class="form-control" name="pass2" placeholder="Confirmation Mot de Passe">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
+                    <input type="submit" class="btn btn-success" name="buttonSign"></input>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!--Connection-->
+          <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#login">Connexion</button>
+          <div id="login" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header center">
+                  Veuillez entrer vos identifiants
+                </div>
+                <div class="modal-body">
+                  <form method="post" action="controller/login.php">
+                    <div class="form-group">
+                      <label for="alias">Pseudo</label>
+                      <input type="text" class="form-control" name="alias" placeholder="Pseudo">
+                    </div>
+                    <div class="form-group">
+                      <label for="passwordForm">Mot de Passe</label>
+                      <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" name="button">Annuler</button>
+                    <input type="submit" class="btn btn-success" name="buttonLogin"></input>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
     <!--Hero-->
     <section class="herosection sectionmargin">
       <div class="hero">
@@ -74,6 +180,13 @@
       </form>
     </section>
     <!--Footer-->
-    <?php require'view/footer.php'; ?>
+    <footer>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="public/plugins/tinymce/tinymce.min.js"></script>
+      <script type="text/javascript" src="js/init-tinymce.js"></script>
+    </footer>
   </body>
 </html>

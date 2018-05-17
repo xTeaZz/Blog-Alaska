@@ -7,7 +7,7 @@
     require'head.php';
     ?>
     <body>
-
+      <?php require'header.php'; ?>
       <section>
         <ul>
           <?php $post = $db->query('SELECT * FROM post ORDER BY id DESC'); ?>

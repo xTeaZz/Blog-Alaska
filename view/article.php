@@ -5,11 +5,9 @@
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <?php
-    require'head.php';
-    ?>
+  <?php require'head.php'; ?>
     <body>
-      
+      <?php require'header.php' ?>
       <section>
         <h1><?= $title ?></h1>
         <p><?= $message ?></p>
