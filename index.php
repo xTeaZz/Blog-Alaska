@@ -156,22 +156,23 @@
     <!--Biography-->
     <section class="sectionmargin container" id="bio">
       <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
+        <h1 class="display-4">Jean Forteroche</h1>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         <hr class="my-4">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <a class="btn btn-primary btn-lg" href="view/bio.php" role="button">Lire la suite</a>
       </div>
     </section>
     <!--Contact-->
     <section id="contact" class="container sectionmargin">
+      <h1 class="titlestyle textcolor">Formulaire de Contact</h1>
       <form action="model/mail.php" method="post">
         <div class="form-group">
-          <label for="exampleFormControlInput1">Adresse Email</label>
+          <label for="exampleFormControlInput1" class="textcolor">Adresse Email</label>
           <input name="mail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Adresse Email">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlTextarea1">Message</label>
+          <label for="exampleFormControlTextarea1" class="textcolor">Message</label>
           <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Votre Message"></textarea>
         </div>
         <div class="form-group alignleft">

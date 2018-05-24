@@ -11,7 +11,7 @@
           <a class="nav-link" href="episodes.php">Episodes<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#bio">Jean Forteroche<span class="sr-only"></span></a>
+          <a class="nav-link" href="bio.php">Jean Forteroche<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>

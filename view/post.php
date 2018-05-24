@@ -7,7 +7,8 @@
 ?>
   <body>
     <?php require'header.php'; ?>
-    <section class="container">
+    <section class="container paddingtop">
+      <h1 class="titlestyle">Création d'article</h1>
       <form action="" method="post">
         <div class="form-group">
           <label for="title">Titre</label>
