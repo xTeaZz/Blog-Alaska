@@ -4,6 +4,7 @@
   $title = "Création d'articles";
   require'head.php';
   require'../model/db.php'
+  require'../model/Post.php'
 ?>
   <body>
     <?php require'header.php'; ?>

@@ -1,20 +1,29 @@
-<?php require'../model/db.php'; ?>
+<?php
+  require'../model/db.php';
+  require'../model/Post.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <?php
     $title = "Liste des episodes";
-    require'../model/db.php';
     require'head.php';
     ?>
     <body>
       <?php require'header.php'; ?>
-      <section class="container paddingtop">
-        <ul>
+      <section class="container-fluid paddingtop">
+        <div class="rows">
           <?php $post = $db->query('SELECT * FROM post ORDER BY id DESC'); ?>
           <?php while($p = $post->fetch()) { ?>
-          <li><a href="article.php?id=<? $p['id'] ?>"><?= $p['title'] ?></a></li>
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><?= $p['title'] ?></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a class="btn btn-primary" href="article.php?id=<?= $p['id'] ?><?= $p['title'] ?>">Lire l'article</a>
+              </div>
           <?php } ?>
-        </ul>
+        </div>
       </section>
       <?php require'footer.php'; ?>
     </body>
