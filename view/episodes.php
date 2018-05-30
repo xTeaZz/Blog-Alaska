@@ -28,5 +28,3 @@
       <?php require'footer.php'; ?>
     </body>
 </html>
-
-<?php $post = $db->query('SELECT * FROM post ORDER BY id DESC'); ?>

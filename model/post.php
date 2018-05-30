@@ -47,5 +47,7 @@
     public function getLastPost() {
       $post = $db->query('SELECT * FROM post ORDER BY id DESC');
       while($p = $post->fetch()) {
+      }
     }
+  }
 ?>
