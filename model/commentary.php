@@ -1,6 +1,6 @@
 <?php
 
-  class Post {
+  class Commentary {
     private $id;
     private $postId;
     private $memberId;
@@ -8,11 +8,11 @@
     private $date;
 
     public function __construct($id, $postId, $memberId, $text, $date) {
-      $this->$id = $id;
-      $this->$postId = $postId;
-      $this->$memberId = $memberId;
-      $this->$text = $text;
-      $this->$text = $date;
+      $this->id = $id;
+      $this->postId = $postId;
+      $this->memberId = $memberId;
+      $this->text = $text;
+      $this->date = $date;
     }
 
   }

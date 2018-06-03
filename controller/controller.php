@@ -1,11 +1,16 @@
 <?php
 
-  function post() {
-    require('db.php');
-    $post = getPost($_GET['id']);
-    $comments = getComments($_GET['id']);
+  class Controller{
 
-    require('postView.php');
+    public function homeView() {
+      require'../view/accueil.php';
+    }
+
+    public function setPost(){
+        require'../model/db.php';
+
+    }
+
   }
 
 ?>
