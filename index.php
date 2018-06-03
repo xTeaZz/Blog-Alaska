@@ -3,15 +3,18 @@
   require'controller/Controller.php';
 
   if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'listPosts') {
-      listPosts();
+    if ($_GET['action'] == 'episodes') {
+      listPost();
     }
     elseif ($_GET['action'] == 'post') {
+      createPost();
+    }
+    elseif ($_GET['action'] == 'article') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
-        post();
+        getPost();
       }
       else {
-        echo 'Erreur : aucun identifiant de billet envoyé';
+        echo 'Erreur Aucune page trouvé';
       }
     }
   }

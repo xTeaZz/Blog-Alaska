@@ -3,8 +3,6 @@
 <?php
   $title = "Création d'articles";
   require'head.php';
-  require'../model/db.php'
-  require'../model/Post.php'
 ?>
   <body>
     <?php require'header.php'; ?>
@@ -25,22 +23,3 @@
     <?php require'footer.php'; ?>
   </body>
 </html>
-
-<?php
-  if (isset($_POST['title'], $_POST['postText'])) {
-    if(!empty($_POST['title']) AND !empty($_POST['postText'])){
-      $post_title = htmlspecialchars($_POST['title']);
-      $post_message = htmlspecialchars($_POST['postText']);
-
-      $insert = $db->prepare('INSERT INTO post(title, message, creation_date) VALUES (?, ?,NOW())');
-      $insert->execute(array($post_title, $post_message));
-
-      $info = "Votre Article a bien était crée";
-    } else {
-      $info = "Veuillez remplir tous les champs";
-    }
-  }
-  if (isset($info)) {
-    echo $info;
-  }
-?>

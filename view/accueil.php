@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="view/episodes.php">Episodes<span class="sr-only"></span></a>
+              <a class="nav-link" href="?action=episodes">Episodes<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#bio">Jean Forteroche<span class="sr-only"></span></a>

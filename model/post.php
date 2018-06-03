@@ -6,10 +6,10 @@
     private $date;
 
     public function __construct($id, $title, $message, $date) {
-      $this->id = $id;
-      $this->title = $title;
-      $this->message = $message;
-      $this->date = $date;
+      $this->$id = $id;
+      $this->$title = $title;
+      $this->$message = $message;
+      $this->$date = $date;
     }
 
     public function getPost() {
@@ -44,8 +44,12 @@
       }
     }
 
-    public function getLastPost() {
+    public function listPost() {
       $post = $db->query('SELECT * FROM post ORDER BY id DESC');
+    }
+
+    public function getLastPost() {
+      $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3');
       while($p = $post->fetch()) {
       }
     }
