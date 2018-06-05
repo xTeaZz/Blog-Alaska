@@ -152,6 +152,21 @@
         </div>
       </div>
     </section>
+    <section class="container-fluid sectionmargin" id="episodes">
+    <?php $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3'); ?>
+    <?php while($p = $post->fetch()) { ?>
+    <div class="row" id="rowcard">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><?= $p['title'] ?></h5>
+          <p class="card-text"><?= $p['message'] ?></p>
+          <a class="btn btn-primary" href="article.php?id=<?= $p['id'] ?><?= $p['title'] ?>">Lire l'article</a>
+        </div>
+      </div>
+      <?php } ?>
+    </div>
+    </section>
     <!--Biography-->
     <section class="sectionmargin container" id="bio">
       <div class="jumbotron">

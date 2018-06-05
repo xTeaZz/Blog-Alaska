@@ -20,6 +20,7 @@
   }
   else {
     /*homeView();*/
+    require'model/db.php';
     require'view/accueil.php';
   }
 

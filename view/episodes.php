@@ -1,6 +1,5 @@
 <?php
   require'../model/db.php';
-  require'../model/Post.php';
 ?>
 
 <!DOCTYPE html>
