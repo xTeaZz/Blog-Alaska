@@ -53,5 +53,16 @@
       while($p = $post->fetch()) {
       }
     }
+
+    public function deletePost() {
+      if(isset($_GET['id']) AND !empty($_GET['id'])) {
+        $delete_post = htmlspecialchars($_GET['id']);
+
+        $delete = $db->prepare('DELETE FROM post WHERE id = ?');
+        $delete->execute(array($delete_post));
+
+        header('Location: deletescreen.php');
+      }
+    }
   }
 ?>

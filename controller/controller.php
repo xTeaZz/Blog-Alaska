@@ -4,6 +4,8 @@
 
     public function homeView() {
       require'../view/accueil.php';
+      require'../model/sign.php';
+      require'../model/login.php';
     }
 
     public function getPost() {

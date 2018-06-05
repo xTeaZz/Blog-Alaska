@@ -1,5 +1,4 @@
 <?php
-  require '../index.php';
   require 'db.php';
 
   if(isset($_POST['buttonSign'])){
