@@ -7,9 +7,9 @@
       $controller = new Controller();
       $controller->listEpisodes();
     }
-    elseif ($_GET['action'] == 'post') {
+    elseif ($_GET['action'] == 'createpost') {
       $controller = new Controller();
-      $controller->listEpisodes();
+      $controller->createPost();
     }
     elseif ($_GET['action'] == 'admin') {
       $controller = new Controller();

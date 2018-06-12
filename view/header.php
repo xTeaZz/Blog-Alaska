@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="episodes.php">Episodes<span class="sr-only"></span></a>
+          <a class="nav-link" href="?action=episodes">Episodes<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="bio.php">Jean Forteroche<span class="sr-only"></span></a>
+          <a class="nav-link" href="?action=bio">Jean Forteroche<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="index.php#contact">Contact</a>
         </li>
       </ul>
     </div>

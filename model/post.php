@@ -20,6 +20,7 @@
       } else {
         header('Location: episodes.php');
       }
+      return $post;
     }
 
     public function createPost() {
@@ -39,6 +40,7 @@
       if (isset($info)) {
         echo $info;
       }
+      return $post;
     }
 
     public function listPost() {

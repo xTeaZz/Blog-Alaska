@@ -12,7 +12,7 @@
         <div class="card-body">
           <h5 class="card-title">Crée un article</h5>
           <p class="card-text">Crée un nouvel article</p>
-          <a href="post.php" class="btn btn-primary">Aller ici</a>
+          <a href="?action=createpost" class="btn btn-primary">Aller ici</a>
         </div>
       </div>
       <div class="card text-center titlestyle">
@@ -26,7 +26,7 @@
         <div class="card-body">
           <h5 class="card-title">Supprimer un article</h5>
           <p class="card-text">Sélectionner un article a supprimer</p>
-          <a href="deletescreen.php" class="btn btn-primary">Aller ici</a>
+          <a href="?action=deletepost.php" class="btn btn-primary">Aller ici</a>
         </div>
       </div>
     </section>

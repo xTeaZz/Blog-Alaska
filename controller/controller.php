@@ -17,6 +17,7 @@
     }
 
     public function adminView() {
+      require'/model/db.php';
       require'/view/admin.php';
       require'/model/sign.php';
       require'/controller/login.php';
@@ -27,8 +28,7 @@
       require'/model/Post.php';
       require'/view/article.php';
       $getpost = new Post();
-      $post = $listpost->listPost();
-      getPost();
+      $post = $getpost->getPost();
     }
 
     public function setPost() {
@@ -39,9 +39,8 @@
       require'/model/db.php';
       require'/model/Post.php';
       require'/view/post.php';
-      $listpost = new Post();
-      $lispost = $listpost->listPost();
-      createPost();
+      $create = new Post();
+      $post = $create->createPost();
     }
 
     public function listEpisodes() {
