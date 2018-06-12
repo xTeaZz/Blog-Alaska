@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <!--Head-->
-  <?php $title = "Billet simple pour l'Alaska"; ?>
-  <head>
-    <meta charset="utf-8">
-    <title><?= $title ?></title>
-    <meta name="description" content="Billet simple pour l'Alaska Un roman de Jean Forteroche" />
-    <!--Twitter Card data-->
-    <meta name="twitter:card" content="summary">
-    <!--Open Graph data-->
-    <meta property="og:title" content="Billet simple pour l'Alaska" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.jonathan-cohen.com/roman/index.php" />
-    <meta property="og:image" content="http://www.jonathan-cohen.com/roman/index.php" />
-    <meta property="og:description" content="Billet simple pour l'Alaska Un roman de Jean Forteroche" />
-    <link rel="stylesheet" href="public/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="public/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/fontawesome-.min.css">
-    <link rel="stylesheet" href="public/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+  <?php
+    $title = "Billet simple pour l'Alaska";
+    require'head.php';
+    ?>
   <!--Body-->
   <body class="sectionbackground">
     <!--Header-->
     <header class="navbarfixed">
       <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">Billet simple pour l'Alaska</a>
+        <a class="navbar-brand" href="index.php">Billet simple pour l'Alaska</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,7 +21,7 @@
               <a class="nav-link" href="?action=episodes">Episodes<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#bio">Jean Forteroche<span class="sr-only"></span></a>
+              <a class="nav-link" href="?action=bio">Jean Forteroche<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
@@ -124,39 +108,10 @@
       </div>
     </section>
     <!--Episodes-->
-    <section class="container-fluid sectionmargin" id="episodes">
-      <div class="row" id="rowcard">
-        <div class="card col-3" style="width: 18rem;">
-          <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Lire la suite</a>
-          </div>
-        </div>
-        <div class="card col-3" style="width: 18rem;">
-          <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Lire la suite</a>
-          </div>
-        </div>
-        <div class="card col-3" style="width: 18rem;">
-          <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Lire la suite</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="container-fluid sectionmargin" id="episodes">
+    <section class="container sectionmargin row justify-content-around" id="episodes">
     <?php $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3'); ?>
     <?php while($p = $post->fetch()) { ?>
-    <div class="row" id="rowcard">
-      <div class="card" style="width: 18rem;">
+      <div class="card col-4" style="width: 18rem;">
         <img class="card-img-top" src=".../100px180/" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><?= $p['title'] ?></h5>
@@ -164,8 +119,7 @@
           <a class="btn btn-primary" href="article.php?id=<?= $p['id'] ?><?= $p['title'] ?>">Lire l'article</a>
         </div>
       </div>
-      <?php } ?>
-    </div>
+    <?php } ?>
     </section>
     <!--Biography-->
     <section class="sectionmargin container" id="bio">
@@ -195,13 +149,6 @@
       </form>
     </section>
     <!--Footer-->
-    <footer>
-      <script type="text/javascript" src="js/jquery.min.js"></script>
-      <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-      <script type="text/javascript" src="js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="js/main.js"></script>
-      <script type="text/javascript" src="public/plugins/tinymce/tinymce.min.js"></script>
-      <script type="text/javascript" src="js/init-tinymce.js"></script>
-    </footer>
+    <?php require'footer.php' ?>
   </body>
 </html>

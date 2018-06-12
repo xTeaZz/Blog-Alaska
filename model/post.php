@@ -5,11 +5,8 @@
     private $message;
     private $date;
 
-    public function __construct($id, $title, $message, $date) {
-      $this->$id = $id;
-      $this->$title = $title;
-      $this->$message = $message;
-      $this->$date = $date;
+    public function __construct() {
+
     }
 
     public function getPost() {
@@ -45,7 +42,9 @@
     }
 
     public function listPost() {
+      require'db.php';
       $post = $db->query('SELECT * FROM post ORDER BY id DESC');
+      return $post;
     }
 
     public function getLastPost() {
