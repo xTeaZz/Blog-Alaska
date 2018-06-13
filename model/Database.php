@@ -6,5 +6,6 @@
     public function __construct($db) {
       $this->db = $db;
     }
+    return $db;
   }
 ?>

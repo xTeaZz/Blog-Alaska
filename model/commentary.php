@@ -1,6 +1,8 @@
 <?php
 
-  class Commentary {
+  include'Post.php'
+
+  class Commentary extends Post{
     private $id;
     private $postId;
     private $memberId;
