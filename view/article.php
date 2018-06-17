@@ -1,16 +1,11 @@
-<?php
-  require'../model/db.php';
-  require'../model/getPost.php';
-?>
-
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <?php require'head.php'; ?>
     <body>
       <?php require'header.php' ?>
       <section>
-        <h1><?= $title ?></h1>
-        <p><?= $message ?></p>
+        <h1><?=$post['title']?></h1>
+        <p><?= $post['message']?></p>
       </section>
       <?php require'footer.php'; ?>
     </body>

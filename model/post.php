@@ -1,15 +1,11 @@
 <?php
-  class Post {
-    private $id;
-    private $title;
-    private $message;
-    private $date;
 
-    public function __construct() {
+  require'Database.php';
 
-    }
+  class Post extends Database {
 
     public function getPost() {
+      require'db.php';
       if(isset($_GET['id']) AND !empty($_GET['id'])){
         $get_id = htmlspecialchars($_GET['id']);
         $post = $db->prepare('SELECT * FROM post WHERE id = ?');

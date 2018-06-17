@@ -1,7 +1,5 @@
 <?php
 
-  include'Post.php'
-
   class Commentary extends Post{
     private $id;
     private $postId;

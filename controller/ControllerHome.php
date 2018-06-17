@@ -20,9 +20,9 @@
       require'/model/db.php';
       require'/model/User.php';
       require'/model/Post.php';
-      require'/view/article.php';
       $getpost = new Post();
       $post = $getpost->getPost();
+      require'/view/article.php';
     }
 
     public function listEpisodes() {
