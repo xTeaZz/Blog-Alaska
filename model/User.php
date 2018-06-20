@@ -1,6 +1,8 @@
 <?php
 
-  class User {
+  require_once'Database.php';
+
+  class User extends Database {
 
     public function disconnect() {
       session_start();

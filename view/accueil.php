@@ -23,7 +23,7 @@
     <?php $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3'); ?>
     <?php while($p = $post->fetch()) { ?>
       <div class="card col-4" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <img class="card-img-top" src="public/pictures/Alaska.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><?= $p['title'] ?></h5>
           <p class="card-text"><?= $p['message'] ?></p>
@@ -36,9 +36,9 @@
     <section class="sectionmargin container" id="bio">
       <div class="jumbotron">
         <h1 class="display-4">Jean Forteroche</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
         <a class="btn btn-primary btn-lg" href="?action=bio" role="button">Lire la suite</a>
       </div>
     </section>

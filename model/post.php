@@ -1,6 +1,6 @@
 <?php
 
-  require'Database.php';
+  require_once'Database.php';
 
   class Post extends Database {
 
@@ -40,7 +40,9 @@
     }
 
     public function listPost() {
-      require'db.php';
+      $database = new Database;
+      $database->getConnection();
+      var_dump($db);
       $post = $db->query('SELECT * FROM post ORDER BY id DESC');
       return $post;
     }

@@ -34,6 +34,24 @@
       require'view/episodes.php';
     }
 
+    public function sign() {
+      require'model/db.php';
+      require'/model/User.php';
+      require'model/Post.php';
+      $listpost = new Post();
+      $post = $listpost->listPost();
+      require'view/episodes.php';
+    }
+
+    public function login() {
+      require'model/db.php';
+      require'/model/User.php';
+      require'model/Post.php';
+      $listpost = new Post();
+      $post = $listpost->listPost();
+      require'view/episodes.php';
+    }
+
   }
 
 ?>

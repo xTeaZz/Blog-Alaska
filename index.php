@@ -8,6 +8,14 @@
       $controller = new ControllerHome();
       $controller->listEpisodes();
     }
+    elseif ($_GET['action'] == 'login') {
+      $controller = new ControllerHome();
+      $controller->createPost();
+    }
+    elseif ($_GET['action'] == 'sign') {
+      $controller = new ControllerHome();
+      $controller->createPost();
+    }
     elseif ($_GET['action'] == 'createpost') {
       $controller = new ControllerAdmin();
       $controller->createPost();

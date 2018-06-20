@@ -1,5 +1,7 @@
 <?php
 
+  require_once'Database.php';
+
   class Commentary extends Post{
     private $id;
     private $postId;
