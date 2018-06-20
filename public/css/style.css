@@ -21,6 +21,10 @@
   background-color: #343a40;
 }
 
+.marginlist {
+  margin-bottom: 1em;
+}
+
 .paddingtop {
     padding-top: 9em;
 }

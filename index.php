@@ -20,6 +20,14 @@
       $controller = new ControllerAdmin();
       $controller->createPost();
     }
+    elseif ($_GET['action'] == 'delete') {
+      $controller = new ControllerAdmin();
+      $controller->deleteList();
+    }
+    elseif ($_GET['action'] == 'deletepost') {
+      $controller = new ControllerAdmin();
+      $controller->deletePost();
+    }
     elseif ($_GET['action'] == 'admin') {
       $controller = new ControllerAdmin();
       $controller->adminView();

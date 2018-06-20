@@ -27,7 +27,7 @@
         <div class="card-body">
           <h5 class="card-title"><?= $p['title'] ?></h5>
           <p class="card-text"><?= $p['message'] ?></p>
-          <a class="btn btn-primary" href="article.php?id=<?= $p['id'] ?><?= $p['title'] ?>">Lire l'article</a>
+          <a class="btn btn-primary" href="?action=article&id=<?= $p['id'] ?>">Lire l'article</a>
         </div>
       </div>
     <?php } ?>

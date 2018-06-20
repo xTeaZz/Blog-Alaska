@@ -23,6 +23,24 @@ class ControllerAdmin {
     $post = $create->createPost();
   }
 
+  public function deleteList() {
+    require'model/db.php';
+    require'/model/User.php';
+    require'model/Post.php';
+    $deletelist = new Post();
+    $post = $deletelist->listPost();
+    require'/view/deletescreen.php';
+  }
+
+  public function deletePost() {
+    require'model/db.php';
+    require'/model/User.php';
+    require'model/Post.php';
+    $deletepost = new Post();
+    $post = $deletepost->deletePost();
+    require'/view/deletescreen.php';
+  }
+
 }
 
 ?>

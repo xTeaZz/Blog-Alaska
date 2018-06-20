@@ -2,19 +2,14 @@
 
   require_once'Database.php';
 
-  class Commentary extends Post{
-    private $id;
-    private $postId;
-    private $memberId;
-    private $text;
-    private $date;
+  class Commentary extends Post {
 
-    public function __construct($id, $postId, $memberId, $text, $date) {
-      $this->id = $id;
-      $this->postId = $postId;
-      $this->memberId = $memberId;
-      $this->text = $text;
-      $this->date = $date;
+    public function listCommentary() {
+      $database = new Database;
+      $database->getConnection();
+      var_dump($db);
+      $commentary = $db->query('SELECT * FROM post ORDER BY id DESC');
+      return $commentary;
     }
 
   }

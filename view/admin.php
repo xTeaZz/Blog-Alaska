@@ -26,7 +26,7 @@
         <div class="card-body">
           <h5 class="card-title">Supprimer un article</h5>
           <p class="card-text">Sélectionner un article a supprimer</p>
-          <a href="?action=deletepost.php" class="btn btn-primary">Aller ici</a>
+          <a href="?action=delete" class="btn btn-primary">Aller ici</a>
         </div>
       </div>
     </section>

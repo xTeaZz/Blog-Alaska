@@ -40,9 +40,12 @@
     }
 
     public function listPost() {
+      /*
       $database = new Database;
       $database->getConnection();
       var_dump($db);
+      */
+      require'db.php';
       $post = $db->query('SELECT * FROM post ORDER BY id DESC');
       return $post;
     }
