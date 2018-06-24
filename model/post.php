@@ -5,7 +5,8 @@
   class Post extends Database {
 
     public function getPost() {
-      require'db.php';
+      $database = new Database;
+      $db = $database->getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])){
         $get_id = htmlspecialchars($_GET['id']);
         $post = $db->prepare('SELECT * FROM post WHERE id = ?');
@@ -20,6 +21,8 @@
     }
 
     public function createPost() {
+      $database = new Database;
+      $db = $database->getConnection();
       if (isset($_POST['title'], $_POST['postText'])) {
         if(!empty($_POST['title']) AND !empty($_POST['postText'])){
           $post_title = htmlspecialchars($_POST['title']);
@@ -40,23 +43,22 @@
     }
 
     public function listPost() {
-      /*
       $database = new Database;
-      $database->getConnection();
-      var_dump($db);
-      */
-      require'db.php';
+      $db = $database->getConnection();
       $post = $db->query('SELECT * FROM post ORDER BY id DESC');
       return $post;
     }
 
-    public function getLastPost() {
+    public function getLastPosts() {
+      $database = new Database;
+      $db = $database->getConnection();
       $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3');
-      while($p = $post->fetch()) {
-      }
+      return $post;
     }
 
     public function deletePost() {
+      $database = new Database;
+      $db = $database->getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
         $delete_post = htmlspecialchars($_GET['id']);
 

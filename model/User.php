@@ -15,12 +15,14 @@
 
     public function login() {
       session_start();
+      $database = new Database;
+      $db = $database->getConnection();
 
       if(isset($_POST['buttonLogin'])) {
         $alias = htmlspecialchars($_POST['alias']);
         $pass = password_hash($_POST['pass']);
         if(!empty($alias) AND !empty($pass)) {
-          $requser = $bdd->prepare("SELECT * FROM member WHERE mail = ? AND password = ?");
+          $requser = $db->prepare("SELECT * FROM member WHERE mail = ? AND password = ?");
           $requser->execute(array($alias, $pass));
           $userexist = $requser->rowCount();
           if($userexist == 1) {
@@ -41,6 +43,8 @@
     }
 
     public function sign() {
+      $database = new Database;
+      $db = $database->getConnection();
       if(isset($_POST['buttonSign'])){
         if(!empty($_POST['alias']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['pass']) AND !empty($_POST['pass2'])){
           $alias = htmlspecialchars($_POST['alias']);

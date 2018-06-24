@@ -3,7 +3,6 @@
 class ControllerAdmin {
 
   public function adminView() {
-    require'/model/db.php';
     require'/model/User.php';
     require'/view/admin.php';
     require'/controller/login.php';
@@ -11,11 +10,9 @@ class ControllerAdmin {
 
   public function setPost() {
     require'/model/User.php';
-    require'/model/db.php';
   }
 
   public function createPost() {
-    require'/model/db.php';
     require'/model/User.php';
     require'/model/Post.php';
     require'/view/post.php';
@@ -24,7 +21,6 @@ class ControllerAdmin {
   }
 
   public function deleteList() {
-    require'model/db.php';
     require'/model/User.php';
     require'model/Post.php';
     $deletelist = new Post();
@@ -33,7 +29,6 @@ class ControllerAdmin {
   }
 
   public function deletePost() {
-    require'model/db.php';
     require'/model/User.php';
     require'model/Post.php';
     $deletepost = new Post();

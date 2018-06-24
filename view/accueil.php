@@ -20,7 +20,6 @@
     </section>
     <!--Episodes-->
     <section class="container sectionmargin row justify-content-around" id="episodes">
-    <?php $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3'); ?>
     <?php while($p = $post->fetch()) { ?>
       <div class="card col-4" style="width: 18rem;">
         <img class="card-img-top" src="public/pictures/Alaska.jpg" alt="Card image cap">
