@@ -15,7 +15,7 @@ class ControllerAdmin {
   public function createPost() {
     require'/model/User.php';
     require'/model/Post.php';
-    require'/view/post.php';
+    require'/view/createpost.php';
     $create = new Post();
     $post = $create->createPost();
   }
@@ -33,7 +33,6 @@ class ControllerAdmin {
     require'model/Post.php';
     $deletepost = new Post();
     $post = $deletepost->deletePost();
-    require'/view/deletescreen.php';
   }
 
 }

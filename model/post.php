@@ -39,7 +39,6 @@
       if (isset($info)) {
         echo $info;
       }
-      return $post;
     }
 
     public function listPost() {
@@ -65,8 +64,15 @@
         $delete = $db->prepare('DELETE FROM post WHERE id = ?');
         $delete->execute(array($delete_post));
 
-        header('Location: deletescreen.php');
+        $info = "Votre Article a bien était supprimer";
+      }
+      else {
+        $info = "Une erreur est survenue";
+      }
+      if (isset($info)) {
+        echo $info;
       }
     }
   }
+
 ?>

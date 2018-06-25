@@ -25,8 +25,13 @@
       $controller->deleteList();
     }
     elseif ($_GET['action'] == 'deletepost') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
       $controller = new ControllerAdmin();
       $controller->deletePost();
+      }
+      else {
+        echo 'Erreur Aucune page trouvé';
+      }
     }
     elseif ($_GET['action'] == 'admin') {
       $controller = new ControllerAdmin();

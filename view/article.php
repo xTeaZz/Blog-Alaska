@@ -9,7 +9,7 @@
           <p><?= $post['message']?></p>
         </div>
         <div>
-          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#comment"> Ecrire un commentaire</button>
+          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#comment">Ecrire un commentaire</button>
           <div id="comment" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div>
-          <?php while($c = $post->fetch()) { ?>
+          <?php while($c = $commentary->fetch()) { ?>
           <div class="card">
             <div class="card-header">
               <?= $p['title'] ?>
@@ -47,6 +47,6 @@
           </div>
           <?php } ?>
       </section>
-      <?php require'footer.php'; ?>
+      <?php require'footer.php' ?>
     </body>
 </html>

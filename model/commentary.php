@@ -7,7 +7,7 @@
     public function listCommentary() {
       $database = new Database;
       $db = $database->getConnection();
-      $commentary = $db->query('SELECT * FROM post ORDER BY id DESC');
+      $commentary = $db->query('SELECT * FROM comment ORDER BY id DESC');
       return $commentary;
     }
 
