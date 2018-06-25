@@ -33,6 +33,19 @@
         echo 'Erreur Aucune page trouvé';
       }
     }
+    elseif ($_GET['action'] == 'update') {
+      $controller = new ControllerAdmin();
+      $controller->updateList();
+    }
+    elseif ($_GET['action'] == 'updatepost') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+      $controller = new ControllerAdmin();
+      $controller->updatePost();
+      }
+      else {
+        echo 'Erreur Aucune page trouvé';
+      }
+    }
     elseif ($_GET['action'] == 'admin') {
       $controller = new ControllerAdmin();
       $controller->adminView();

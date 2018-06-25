@@ -8,8 +8,22 @@ class ControllerAdmin {
     require'/controller/login.php';
   }
 
-  public function setPost() {
+  public function updatePost() {
     require'/model/User.php';
+    require'/model/Post.php';
+    $getpost = new Post();
+    $post = $getpost->getPost();
+    require'/view/updatepost.php';
+    $update = new Post();
+    $post = $update->updatePost();
+  }
+
+  public function updateList() {
+    require'/model/User.php';
+    require'model/Post.php';
+    $updatelist = new Post();
+    $post = $updatelist->listPost();
+    require'/view/updatescreen.php';
   }
 
   public function createPost() {

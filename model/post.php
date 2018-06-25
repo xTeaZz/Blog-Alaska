@@ -41,6 +41,27 @@
       }
     }
 
+    public function updatePost() {
+      $database = new Database;
+      $db = $database->getConnection();
+      if (isset($_POST['title'], $_POST['postText'])) {
+        if(!empty($_POST['title']) AND !empty($_POST['postText'])){
+          $post_title = htmlspecialchars($_POST['title']);
+          $post_message = htmlspecialchars($_POST['postText']);
+
+          $insert = $db->prepare('UPDATE post(title, message, creation_date) VALUES (?, ?,NOW())');
+          $insert->execute(array($post_title, $post_message));
+
+          $info = "Votre Article a bien était modifier";
+        } else {
+          $info = "Veuillez remplir tous les champs";
+        }
+      }
+      if (isset($info)) {
+        echo $info;
+      }
+    }
+
     public function listPost() {
       $database = new Database;
       $db = $database->getConnection();

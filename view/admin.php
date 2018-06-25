@@ -19,7 +19,7 @@
         <div class="card-body">
           <h5 class="card-title">Modifier un article</h5>
           <p class="card-text">Modifier un article existant</p>
-          <a href="#" class="btn btn-primary">Aller ici</a>
+          <a href="?action=update" class="btn btn-primary">Aller ici</a>
         </div>
       </div>
       <div class="card text-center titlestyle">
