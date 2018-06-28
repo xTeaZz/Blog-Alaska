@@ -20,9 +20,14 @@
     public function getPost() {
       require'/model/User.php';
       require'/model/Post.php';
+      require'/model/Commentary.php';
       $getpost = new Post();
       $post = $getpost->getPost();
+      $getcomment = new Commentary();
+      $commentary = $getcomment->listCommentary();
       require'/view/article.php';
+      $createcomment = new Commentary();
+      $commentary = $createcomment->createCommentary();
     }
 
     public function getLastPosts() {

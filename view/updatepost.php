@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <?php
-  $title = "Création d'articles";
+  $title = "Modification d'article";
   require'head.php';
 ?>
   <body>

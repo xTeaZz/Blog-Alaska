@@ -49,7 +49,7 @@
           $post_title = htmlspecialchars($_POST['title']);
           $post_message = htmlspecialchars($_POST['postText']);
 
-          $insert = $db->prepare('UPDATE post(title, message, creation_date) VALUES (?, ?,NOW())');
+          $insert = $db->prepare('UPDATE FROM post SET title = ? message = ? WHERE id = ?');
           $insert->execute(array($post_title, $post_message));
 
           $info = "Votre Article a bien était modifier";

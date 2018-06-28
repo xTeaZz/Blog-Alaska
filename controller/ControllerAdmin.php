@@ -11,10 +11,9 @@ class ControllerAdmin {
   public function updatePost() {
     require'/model/User.php';
     require'/model/Post.php';
-    $getpost = new Post();
-    $post = $getpost->getPost();
-    require'/view/updatepost.php';
     $update = new Post();
+    $post = $update->getPost();
+    require'/view/updatepost.php';
     $post = $update->updatePost();
   }
 
