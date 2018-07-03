@@ -28,7 +28,7 @@
               Veuillez entrer vos identifiants d'Inscription
             </div>
             <div class="modal-body">
-              <form method="post" action="model/sign.php">
+              <form method="post" action="signin">
                 <div class="form-group">
                   <label for="alias">Pseudo</label>
                   <input type="text" class="form-control" name="alias" placeholder="Pseudo">
@@ -38,16 +38,8 @@
                   <input type="email" class="form-control" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email">
                 </div>
                 <div class="form-group">
-                  <label for="emailForm">Confirmation Adresse Email</label>
-                  <input type="email" class="form-control" name="mail2" aria-describedby="emailHelp" placeholder="Confirmation Adresse Email">
-                </div>
-                <div class="form-group">
                   <label for="passwordForm">Mot de Passe</label>
                   <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
-                </div>
-                <div class="form-group">
-                  <label for="passwordForm">Confirmation Mot de Passe</label>
-                  <input type="password" class="form-control" name="pass2" placeholder="Confirmation Mot de Passe">
                 </div>
               </div>
               <div class="modal-footer">

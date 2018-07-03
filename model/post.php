@@ -15,7 +15,7 @@
         $title = $post['title'];
         $message = $post['message'];
       } else {
-        header('Location: episodes.php');
+        echo "Article Introuvable";
       }
       return $post;
     }
@@ -46,13 +46,15 @@
       $db = $database->getConnection();
       if (isset($_POST['title'], $_POST['postText'])) {
         if(!empty($_POST['title']) AND !empty($_POST['postText'])){
+          if(isset($_GET['id']) AND !empty($_GET['id'])) {
+            $update_post = htmlspecialchars($_GET['id']);
           $post_title = htmlspecialchars($_POST['title']);
           $post_message = htmlspecialchars($_POST['postText']);
-
-          $insert = $db->prepare('UPDATE FROM post SET title = ? message = ? WHERE id = ?');
-          $insert->execute(array($post_title, $post_message));
+          $update = $db->prepare('UPDATE post SET title = ?, message = ? WHERE id = ?');
+          $update->execute(array($post_title, $post_message, $update_post));
 
           $info = "Votre Article a bien était modifier";
+          }
         } else {
           $info = "Veuillez remplir tous les champs";
         }

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <?php require'head.php'; ?>
+  <?php
+  $title = $post['title'];
+  require'head.php';
+  ?>
     <body>
       <?php require'header.php' ?>
       <section class="container paddingtop">
         <div>
           <h1><?=$post['title']?></h1>
-          <p><?= $post['message']?></p>
+          <p><?=$post['message']?></p>
         </div>
         <div>
           <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#comment">Ecrire un commentaire</button>

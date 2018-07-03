@@ -18,7 +18,7 @@
         if(!empty($_POST['comment'])){
           $post_commentary = htmlspecialchars($_POST['comment']);
 
-          $insert = $db->prepare('INSERT INTO comment(comment_text, comment_date) VALUES (?,NOW())');
+          $insert = $db->prepare('INSERT INTO comment(id_post, comment_text, comment_date) VALUES (?,NOW())');
           $insert->execute(array($post_commentary));
 
           $info = "Votre commentaire a bien était crée";

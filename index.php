@@ -12,9 +12,9 @@
       $controller = new ControllerHome();
       $controller->createPost();
     }
-    elseif ($_GET['action'] == 'sign') {
+    elseif ($_GET['action'] == 'signin') {
       $controller = new ControllerHome();
-      $controller->createPost();
+      $controller->signuser();
     }
     elseif ($_GET['action'] == 'createpost') {
       $controller = new ControllerAdmin();

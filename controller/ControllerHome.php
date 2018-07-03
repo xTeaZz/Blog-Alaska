@@ -8,7 +8,16 @@
       $lastposts = new Post();
       $post = $lastposts->getLastPosts();
       require'/view/accueil.php';
+      $userclass = new User();
+      $user = $userclass->sign();
       require'/controller/login.php';
+    }
+
+    public function signuser() {
+      require'/model/User.php';
+      $userclass = new User();
+      $user = $userclass->sign();
+      require'/view/accueil.php';
     }
 
     public function bioView() {
