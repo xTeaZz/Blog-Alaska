@@ -28,7 +28,7 @@
               Veuillez entrer vos identifiants d'Inscription
             </div>
             <div class="modal-body">
-              <form method="post" action="signin">
+              <form method="post" action="index.php?action=signin">
                 <div class="form-group">
                   <label for="alias">Pseudo</label>
                   <input type="text" class="form-control" name="alias" placeholder="Pseudo">

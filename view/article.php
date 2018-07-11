@@ -20,7 +20,7 @@
                   Veuillez saisir votre commentaire
                 </div>
                 <div class="modal-body">
-                  <form method="post" action="">
+                  <form method="post" action="index.php?action=comment&id=<?= $post['id'] ?>">
                     <div class="form-group">
                       <label for="commentArea">Commentaire</label>
                       <textarea class="form-control" id="commentArea" name="comment" rows="3"></textarea>
@@ -44,7 +44,7 @@
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p><?= $c['comment'] ?></p>
-                <a href="#" class="btn btn-danger">Signaler</a>
+                <a href="index.php?action=report&id=<?= $c['id'] ?>" class="btn btn-danger">Signaler</a>
               </blockquote>
             </div>
           </div>

@@ -82,7 +82,6 @@
       else {
         echo "Une erreur est surevenue";
       }
-      return $user;
     }
 
   }

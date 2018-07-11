@@ -8,16 +8,14 @@
       $lastposts = new Post();
       $post = $lastposts->getLastPosts();
       require'/view/accueil.php';
-      $userclass = new User();
-      $user = $userclass->sign();
       require'/controller/login.php';
     }
 
     public function signuser() {
       require'/model/User.php';
+      require'/model/Post.php';
       $userclass = new User();
       $user = $userclass->sign();
-      require'/view/accueil.php';
     }
 
     public function bioView() {
@@ -35,8 +33,6 @@
       $getcomment = new Commentary();
       $commentary = $getcomment->listCommentary();
       require'/view/article.php';
-      $createcomment = new Commentary();
-      $commentary = $createcomment->createCommentary();
     }
 
     public function getLastPosts() {
@@ -69,6 +65,20 @@
       $listpost = new Post();
       $post = $listpost->listPost();
       require'view/episodes.php';
+    }
+
+    public function createcomment() {
+      require'model/Post.php';
+      require'model/Commentary.php';
+      $commentary = new Commentary();
+      $comment = $commentary->createCommentary();
+    }
+
+    public function reportCommentary() {
+      require'model/Post.php';
+      require'model/Commentary.php';
+      $report = new Commentary();
+      $comment = $report->reportCommentary();
     }
 
   }

@@ -26,7 +26,7 @@
       if (isset($_POST['title'], $_POST['postText'])) {
         if(!empty($_POST['title']) AND !empty($_POST['postText'])){
           $post_title = htmlspecialchars($_POST['title']);
-          $post_message = htmlspecialchars($_POST['postText']);
+          $post_message = ($_POST['postText']);
 
           $insert = $db->prepare('INSERT INTO post(title, message, creation_date) VALUES (?, ?,NOW())');
           $insert->execute(array($post_title, $post_message));
@@ -49,7 +49,7 @@
           if(isset($_GET['id']) AND !empty($_GET['id'])) {
             $update_post = htmlspecialchars($_GET['id']);
           $post_title = htmlspecialchars($_POST['title']);
-          $post_message = htmlspecialchars($_POST['postText']);
+          $post_message =($_POST['postText']);
           $update = $db->prepare('UPDATE post SET title = ?, message = ? WHERE id = ?');
           $update->execute(array($post_title, $post_message, $update_post));
 

@@ -16,6 +16,15 @@
       $controller = new ControllerHome();
       $controller->signuser();
     }
+    elseif ($_GET['action'] == 'comment') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $controller = new ControllerHome();
+        $controller->createcomment();
+      }
+      else {
+        echo 'Erreur Aucune page trouvé';
+      }
+    }
     elseif ($_GET['action'] == 'createpost') {
       $controller = new ControllerAdmin();
       $controller->createPost();
@@ -41,6 +50,15 @@
       if (isset($_GET['id']) && $_GET['id'] > 0) {
       $controller = new ControllerAdmin();
       $controller->updatePost();
+      }
+      else {
+        echo 'Erreur Aucune page trouvé';
+      }
+    }
+    elseif ($_GET['action'] == 'report') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+      $controller = new ControllerHome();
+      $controller->reportCommentary();
       }
       else {
         echo 'Erreur Aucune page trouvé';
