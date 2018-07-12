@@ -28,6 +28,7 @@
              $_SESSION['id'] = $userinfo['id'];
              $_SESSION['alias'] = $userinfo['alias'];
              $_SESSION['email'] = $userinfo['email'];
+             $_SESSION['admin'] = $userinfo['admin'];
              header("Location: index.php?action=loged&id=".$_SESSION['id']);
            }
            else {

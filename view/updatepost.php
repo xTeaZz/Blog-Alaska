@@ -5,7 +5,20 @@
   require'head.php';
 ?>
   <body>
-    <?php require'header.php'; ?>
+    <?php
+      session_start();
+      if (isset($_SESSION['alias'])) {
+        if ($_SESSION['admin'] == 1) {
+          require'adminheader.php';
+        }
+        else{
+          require'logedheader.php';
+        }
+      }
+      else {
+        require'header.php';
+      }
+    ?>
     <section class="container paddingtop">
       <h1 class="titlestyle">Création d'article</h1>
       <form action="" method="post">

@@ -83,4 +83,12 @@
   border-radius: .25rem;
 }
 
+.marginheader {
+  margin-left: 0.4em;
+}
+
+.pheader {
+  margin-bottom: 0rem;
+}
+
 /*-----Admin-----*/

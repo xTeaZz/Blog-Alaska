@@ -11,7 +11,12 @@
     <?php
       session_start();
       if (isset($_SESSION['alias'])) {
-        require'logedheader.php';
+        if ($_SESSION['admin'] == 1) {
+          require'adminheader.php';
+        }
+        else{
+          require'logedheader.php';
+        }
       }
       else {
         require'header.php';

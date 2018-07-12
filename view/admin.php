@@ -5,7 +5,20 @@
         require'head.php';
       ?>
   <body>
-    <?php require'header.php'; ?>
+    <?php
+      session_start();
+      if (isset($_SESSION['alias'])) {
+        if ($_SESSION['admin'] == 1) {
+          require'adminheader.php';
+        }
+        else{
+          require'logedheader.php';
+        }
+      }
+      else {
+        require'header.php';
+      }
+    ?>
     <section class="container paddingtop">
       <h1 class="titlestyle">Centre d'administration</h1>
       <div class="card text-center titlestyle">
