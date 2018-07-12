@@ -63,9 +63,23 @@
       $login->loginUser();
     }
 
+    public function logout() {
+      require'/model/User.php';
+      $logout = new User();
+      $logout->disconnect();
+    }
+
     public function logedUser() {
       require'/model/User.php';
       $login = new User();
+    }
+
+    public function getComment() {
+      require'/model/User.php';
+      require'model/Post.php';
+      require'model/Commentary.php';
+      $listcomment = new Commentary();
+      $commentary = $listcomment->listCommentary();
     }
 
     public function createcomment() {

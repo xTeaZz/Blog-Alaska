@@ -36,10 +36,10 @@
           </div>
         </div>
         <div>
-          <?php while($c = $commentary->fetch()) { ?>
+          <?php var_dump($commentary); while($c = $commentary->fetch()) { ?>
           <div class="card">
             <div class="card-header">
-              <?= $c['author'] ?>
+              <!--<?= $c['author'] ?>-->
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">

@@ -8,8 +8,7 @@
       session_start();
       $_SESSION = array();
       session_destroy();
-
-      return $disconnection;
+      header('Location: index.php');
     }
 
     public function loginUser() {

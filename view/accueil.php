@@ -8,7 +8,15 @@
   <!--Body-->
   <body class="sectionbackground">
     <!--Header-->
-    <?php require'header.php' ?>
+    <?php
+      session_start();
+      if (isset($_SESSION['alias'])) {
+        require'logedheader.php';
+      }
+      else {
+        require'header.php';
+      }
+    ?>
     <!--Hero-->
     <section class="herosection sectionmargin">
       <div class="hero">

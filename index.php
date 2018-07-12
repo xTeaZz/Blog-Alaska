@@ -82,18 +82,19 @@
         echo 'Erreur Aucune page trouvé';
       }
     }
-
+    elseif ($_GET['action'] == 'logout') {
+      $controller = new ControllerHome();
+      $controller->logout();
+    }
     elseif ($_GET['action'] == 'loged') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
         $controller = new ControllerHome();
-        $controller->logedUser();
+        $controller->homeView();
       }
-
       else {
         echo 'Erreur Aucune page trouvé';
       }
     }
-
   }
   else {
     $controller = new ControllerHome();
