@@ -87,6 +87,9 @@
         $delete = $db->prepare('DELETE FROM post WHERE id = ?');
         $delete->execute(array($delete_post));
 
+        $delete_comment = $db->prepare('DELETE FROM comment WHERE id_post = ?');
+        $delete_comment->execute(array($delete_post));
+
         $info = "Votre Article a bien était supprimer";
       }
       else {
