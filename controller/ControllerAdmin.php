@@ -5,7 +5,6 @@ class ControllerAdmin {
   public function adminView() {
     require'/model/User.php';
     require'/view/admin.php';
-    require'/controller/login.php';
   }
 
   public function updatePost() {

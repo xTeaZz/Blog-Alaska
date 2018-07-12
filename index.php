@@ -10,7 +10,7 @@
     }
     elseif ($_GET['action'] == 'login') {
       $controller = new ControllerHome();
-      $controller->createPost();
+      $controller->login();
     }
     elseif ($_GET['action'] == 'signin') {
       $controller = new ControllerHome();
@@ -77,10 +77,23 @@
         $controller = new ControllerHome();
         $controller->getPost();
       }
+
       else {
         echo 'Erreur Aucune page trouvé';
       }
     }
+
+    elseif ($_GET['action'] == 'loged') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $controller = new ControllerHome();
+        $controller->logedUser();
+      }
+
+      else {
+        echo 'Erreur Aucune page trouvé';
+      }
+    }
+
   }
   else {
     $controller = new ControllerHome();

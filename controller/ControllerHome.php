@@ -8,7 +8,6 @@
       $lastposts = new Post();
       $post = $lastposts->getLastPosts();
       require'/view/accueil.php';
-      require'/controller/login.php';
     }
 
     public function signuser() {
@@ -21,7 +20,6 @@
     public function bioView() {
       require'/model/User.php';
       require'/view/bio.php';
-      require'/controller/login.php';
     }
 
     public function getPost() {
@@ -61,10 +59,13 @@
 
     public function login() {
       require'/model/User.php';
-      require'model/Post.php';
-      $listpost = new Post();
-      $post = $listpost->listPost();
-      require'view/episodes.php';
+      $login = new User();
+      $login->loginUser();
+    }
+
+    public function logedUser() {
+      require'/model/User.php';
+      $login = new User();
     }
 
     public function createcomment() {

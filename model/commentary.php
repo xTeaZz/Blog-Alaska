@@ -19,7 +19,7 @@
           $post_commentary = htmlspecialchars($_POST['comment']);
           $post_id = ($_GET['id']);
           $insert = $db->prepare('INSERT INTO comment(id_post, comment_text, comment_date) VALUES (?, ?, NOW())');
-          $insert->execute(array($post_id, $post_commentary));
+          $result = $insert->execute(array($post_id, $post_commentary));
 
           $info = "Votre commentaire a bien était crée";
         } else {
@@ -68,7 +68,6 @@
         echo $info;
       }
     }
-
 
   }
 ?>

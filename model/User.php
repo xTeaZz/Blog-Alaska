@@ -12,34 +12,37 @@
       return $disconnection;
     }
 
-    public function login() {
-      session_start();
+    public function loginUser() {
       $database = new Database;
       $db = $database->getConnection();
 
       if(isset($_POST['buttonLogin'])) {
-        $alias = htmlspecialchars($_POST['alias']);
-        $pass = password_hash($_POST['pass']);
-        if(!empty($alias) AND !empty($pass)) {
-          $requser = $db->prepare("SELECT * FROM member WHERE mail = ? AND password = ?");
-          $requser->execute(array($alias, $pass));
-          $userexist = $requser->rowCount();
-          if($userexist == 1) {
+        $mail = htmlspecialchars($_POST['mail']);
+        $pass = ($_POST['pass']);
+        if(!empty($mail) AND !empty($pass)) {
+          $requser = $db->prepare("SELECT * FROM user WHERE email = ?");
+          $result = $requser->execute(array($mail));
              $userinfo = $requser->fetch();
+             $isPasswordCorrect = password_verify($pass, $userinfo['password']);
+             if ($isPasswordCorrect) {
+             session_start();
              $_SESSION['id'] = $userinfo['id'];
              $_SESSION['alias'] = $userinfo['alias'];
              $_SESSION['email'] = $userinfo['email'];
-             header("Location: user.php?id=".$_SESSION['id']);
+             header("Location: index.php?action=loged&id=".$_SESSION['id']);
+           }
+           else {
+             echo "Mail ou Mot de passe incorrect";
+           }
           }
           else {
-            $error = "Mauvais mail ou mot de passe !";
+            echo "Tous les champs doivent être complétés";
           }
         }
         else {
-          $error = "Tous les champs doivent être complétés !";
+          echo "Un problème est surevenu";
         }
       }
-    }
 
     public function sign() {
       $database = new Database;

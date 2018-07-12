@@ -59,13 +59,13 @@
               Veuillez entrer vos identifiants
             </div>
             <div class="modal-body">
-              <form method="post" action="controller/login.php">
+              <form method="post" action="index.php?action=login">
                 <div class="form-group">
-                  <label for="alias">Pseudo</label>
-                  <input type="text" class="form-control" name="alias" placeholder="Pseudo">
+                  <label for="mail">Mail</label>
+                  <input type="text" class="form-control" name="mail" placeholder="Mail">
                 </div>
                 <div class="form-group">
-                  <label for="passwordForm">Mot de Passe</label>
+                  <label for="pass">Mot de Passe</label>
                   <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
                 </div>
               </div>
