@@ -65,8 +65,14 @@
       }
     }
     elseif ($_GET['action'] == 'admin') {
-      $controller = new ControllerAdmin();
-      $controller->adminView();
+      session_start();
+      if ($_SESSION['admin'] == 1) {
+        $controller = new ControllerAdmin();
+        $controller->adminView();
+      }
+      else {
+        echo"Vous n'êtes pas administrateur";
+      }
     }
     elseif ($_GET['action'] == 'bio') {
       $controller = new ControllerHome();
@@ -77,7 +83,6 @@
         $controller = new ControllerHome();
         $controller->getPost();
       }
-
       else {
         echo 'Erreur Aucune page trouvé';
       }

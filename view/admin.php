@@ -6,7 +6,6 @@
       ?>
   <body>
     <?php
-      session_start();
       if (isset($_SESSION['alias'])) {
         if ($_SESSION['admin'] == 1) {
           require'adminheader.php';
