@@ -91,6 +91,10 @@
       $controller = new ControllerHome();
       $controller->logout();
     }
+    elseif ($_GET['action'] == 'moderate') {
+      $controller = new ControllerAdmin();
+      $controller->listReported();
+    }
     elseif ($_GET['action'] == 'loged') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
         $controller = new ControllerHome();

@@ -37,6 +37,7 @@
         }
       }
       if (isset($info)) {
+        header('Location: index.php');
         echo $info;
       }
     }
@@ -52,7 +53,6 @@
           $post_message =($_POST['postText']);
           $update = $db->prepare('UPDATE post SET title = ?, message = ? WHERE id = ?');
           $update->execute(array($post_title, $post_message, $update_post));
-
           $info = "Votre Article a bien était modifier";
           }
         } else {
@@ -60,7 +60,9 @@
         }
       }
       if (isset($info)) {
+        header('Location: index.php');
         echo $info;
+
       }
     }
 
@@ -96,6 +98,7 @@
         $info = "Une erreur est survenue";
       }
       if (isset($info)) {
+        header('Location: index.php');
         echo $info;
       }
     }

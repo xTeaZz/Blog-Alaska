@@ -7,7 +7,17 @@
     public function listCommentary() {
       $database = new Database;
       $db = $database->getConnection();
-      $commentary = $db->query('SELECT * FROM comment WHERE id_post = ORDER BY id DESC');
+      $post_id = htmlspecialchars($_GET['id']);
+      $commentary = $db->prepare('SELECT * FROM comment WHERE id_post = ? ORDER BY id DESC');
+      $commentary->execute(array($post_id));
+      return $commentary;
+    }
+
+    public function listReportedCommentary() {
+      $database = new Database;
+      $db = $database->getConnection();
+      $commentary = $db->prepare('SELECT * FROM comment WHERE report = 1 ORDER BY id_post');
+      $commentary->execute();
       return $commentary;
     }
 
@@ -28,6 +38,7 @@
       }
       if (isset($info)) {
         echo $info;
+        header("Location: index.php?action=article&id=".$post_id);
       }
     }
 

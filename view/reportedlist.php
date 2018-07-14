@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <?php
-    $title = "Liste des episodes";
+    $title = "Liste des commentaires signaler";
     require'head.php';
     ?>
     <body>
@@ -20,14 +20,14 @@
         }
       ?>
       <section class="container paddingtop">
-        <?php while($p = $post->fetch()) { ?>
+        <?php while($c = $commentary->fetch()) { ?>
         <div class="rows">
           <div class="card marginlist" style="width: 18rem;">
-            <img class="card-img-top" src="public/pictures/Alaska.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"><?= $p['title'] ?></h5>
-            <p class="card-text"><?= $p['message'] ?></p>
-            <a class="btn btn-warning" href="?action=updatepost&id=<?= $p['id'] ?>">Modifier l'article</a>
+            <h5 class="card-title"></h5>
+            <p class="card-text"><?= $c['comment_text'] ?></p>
+            <a class="btn btn-success" href="?action=deletecommentary&id=<?= $c['id'] ?>">Valider le Commentaire</a>
+            <a class="btn btn-danger" href="?action=validatecommentary&id=<?= $c['id'] ?>">Supprimer le Commentaire</a>
           </div>
         </div>
         <?php } ?>

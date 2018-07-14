@@ -41,6 +41,13 @@
           <a href="?action=delete" class="btn btn-primary">Aller ici</a>
         </div>
       </div>
+      <div class="card text-center titlestyle">
+        <div class="card-body">
+          <h5 class="card-title">Voir les commentaires signaler</h5>
+          <p class="card-text">Modéré les commentaires</p>
+          <a href="?action=moderate" class="btn btn-primary">Aller ici</a>
+        </div>
+      </div>
     </section>
     <?php require'footer.php'; ?>
   </body>

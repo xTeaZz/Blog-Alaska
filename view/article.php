@@ -25,7 +25,7 @@
           <p><?=$post['message']?></p>
         </div>
         <div>
-          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#comment">Ecrire un commentaire</button>
+          <button class="btn btn-primary titlestyle" type="button" data-toggle="modal" data-target="#comment">Ecrire un commentaire</button>
           <div id="comment" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -49,14 +49,14 @@
           </div>
         </div>
         <div>
-          <?php var_dump($commentary); while($c = $commentary->fetch()) { ?>
+          <?php while($c = $commentary->fetch()) { ?>
           <div class="card">
             <div class="card-header">
               <!--<?= $c['author'] ?>-->
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p><?= $c['comment'] ?></p>
+                <p><?= $c['comment_text'] ?></p>
                 <a href="index.php?action=report&id=<?= $c['id'] ?>" class="btn btn-danger">Signaler</a>
               </blockquote>
             </div>
