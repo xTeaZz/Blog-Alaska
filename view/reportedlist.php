@@ -20,6 +20,7 @@
         }
       ?>
       <section class="container paddingtop">
+        <h1>Liste des Commentaires signaler</h1>
         <?php while($c = $commentary->fetch()) { ?>
         <div class="rows">
           <div class="card marginlist" style="width: 18rem;">
