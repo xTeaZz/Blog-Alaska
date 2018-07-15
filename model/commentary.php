@@ -22,23 +22,29 @@
     }
 
     public function createCommentary() {
+      session_start();
       $database = new Database;
       $db = $database->getConnection();
-      if (isset($_POST['comment'])) {
-        if(!empty($_POST['comment'])){
-          $post_commentary = htmlspecialchars($_POST['comment']);
-          $post_id = ($_GET['id']);
-          $insert = $db->prepare('INSERT INTO comment(id_post, comment_text, comment_date) VALUES (?, ?, NOW())');
-          $result = $insert->execute(array($post_id, $post_commentary));
+      if (isset($_SESSION['alias'])) {
+        if (isset($_POST['comment'])) {
+          if(!empty($_POST['comment'])){
+            $post_commentary = htmlspecialchars($_POST['comment']);
+            $post_id = ($_GET['id']);
+            $insert = $db->prepare('INSERT INTO comment(id_post, comment_text, comment_date) VALUES (?, ?, NOW())');
+            $result = $insert->execute(array($post_id, $post_commentary));
 
-          $info = "Votre commentaire a bien était crée";
-        } else {
+            $info = "Votre commentaire a bien était crée";
+          }
+          else {
           $info = "Veuillez remplir tous les champs";
         }
       }
+    }
+    else {
+      $info ="Vous devez être connecter pour réaliser cette action";
+    }
       if (isset($info)) {
         echo $info;
-        header("Location: index.php?action=article&id=".$post_id);
       }
     }
 
