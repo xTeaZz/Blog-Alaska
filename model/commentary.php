@@ -30,8 +30,9 @@
           if(!empty($_POST['comment'])){
             $post_commentary = htmlspecialchars($_POST['comment']);
             $post_id = ($_GET['id']);
-            $insert = $db->prepare('INSERT INTO comment(id_post, comment_text, comment_date) VALUES (?, ?, NOW())');
-            $result = $insert->execute(array($post_id, $post_commentary));
+            $useralias= ($_SESSION['alias']);
+            $insert = $db->prepare('INSERT INTO comment(alias_user, id_post, comment_text, comment_date) VALUES (?, ?, ?, NOW())');
+            $result = $insert->execute(array($useralias, $post_id, $post_commentary));
 
             $info = "Votre commentaire a bien était crée";
           }
