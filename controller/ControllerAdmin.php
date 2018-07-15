@@ -47,6 +47,18 @@ class ControllerAdmin {
     $post = $deletepost->deletePost();
   }
 
+  public function deleteCommentary() {
+    require'model/Commentary.php';
+    $deletecommentary = new Commentary();
+    $commentary = $deletecommentary->deleteCommentary();
+  }
+
+  public function validateCommentary() {
+    require'model/Commentary.php';
+    $validatecommentary = new Commentary();
+    $commentary = $validatecommentary->validateCommentary();
+  }
+
   public function listReported() {
     require'model/Commentary.php';
     require'model/Post.php';

@@ -26,8 +26,8 @@
           <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text"><?= $c['comment_text'] ?></p>
-            <a class="btn btn-success" href="?action=deletecommentary&id=<?= $c['id'] ?>">Valider le Commentaire</a>
-            <a class="btn btn-danger" href="?action=validatecommentary&id=<?= $c['id'] ?>">Supprimer le Commentaire</a>
+            <a class="btn btn-success" href="?action=validatecommentary&id=<?= $c['id'] ?>">Valider le Commentaire</a>
+            <a class="btn btn-danger" href="?action=deletecommentary&id=<?= $c['id'] ?>">Supprimer le Commentaire</a>
           </div>
         </div>
         <?php } ?>

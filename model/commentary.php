@@ -61,6 +61,25 @@
       }
     }
 
+    public function validateCommentary() {
+      $database = new Database;
+      $db = $database->getConnection();
+      if(isset($_GET['id']) AND !empty($_GET['id'])) {
+        $report_id = htmlspecialchars($_GET['id']);
+
+        $report = $db->prepare('UPDATE comment SET report = 0 WHERE id = ?');
+        $report->execute(array($report_id));
+
+        $info = "Votre commentaire a bien était valider";
+      }
+      else {
+        $info = "Une erreur est survenue";
+      }
+      if (isset($info)) {
+        echo $info;
+      }
+    }
+
     public function reportCommentary() {
       $database = new Database;
       $db = $database->getConnection();

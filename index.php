@@ -95,6 +95,24 @@
       $controller = new ControllerAdmin();
       $controller->listReported();
     }
+    elseif ($_GET['action'] == 'validatecommentary') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $controller = new ControllerAdmin();
+        $controller->validateCommentary();
+      }
+      else {
+        echo 'Erreur Aucune page trouvé';
+      }
+    }
+    elseif ($_GET['action'] == 'deletecommentary') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $controller = new ControllerAdmin();
+        $controller->deleteCommentary();
+      }
+      else {
+        echo 'Erreur Aucune page trouvé';
+      }
+    }
     elseif ($_GET['action'] == 'loged') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
         $controller = new ControllerHome();
