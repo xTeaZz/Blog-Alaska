@@ -1,20 +1,20 @@
 <header class="navbarfixed">
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="../index.php">Billet simple pour l'Alaska</a>
+    <a class="navbar-brand" href="index.php">Billet simple pour l'Alaska</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="episodes.php">Episodes<span class="sr-only"></span></a>
+          <a class="nav-link" href="?action=episodes">Episodes<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="bio.php">Jean Forteroche<span class="sr-only"></span></a>
+          <a class="nav-link" href="?action=bio">Jean Forteroche<span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="index.php#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -28,7 +28,7 @@
               Veuillez entrer vos identifiants d'Inscription
             </div>
             <div class="modal-body">
-              <form method="post" action="model/sign.php">
+              <form method="post" action="index.php?action=signin">
                 <div class="form-group">
                   <label for="alias">Pseudo</label>
                   <input type="text" class="form-control" name="alias" placeholder="Pseudo">
@@ -38,16 +38,8 @@
                   <input type="email" class="form-control" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email">
                 </div>
                 <div class="form-group">
-                  <label for="emailForm">Confirmation Adresse Email</label>
-                  <input type="email" class="form-control" name="mail2" aria-describedby="emailHelp" placeholder="Confirmation Adresse Email">
-                </div>
-                <div class="form-group">
                   <label for="passwordForm">Mot de Passe</label>
                   <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
-                </div>
-                <div class="form-group">
-                  <label for="passwordForm">Confirmation Mot de Passe</label>
-                  <input type="password" class="form-control" name="pass2" placeholder="Confirmation Mot de Passe">
                 </div>
               </div>
               <div class="modal-footer">
@@ -67,13 +59,13 @@
               Veuillez entrer vos identifiants
             </div>
             <div class="modal-body">
-              <form method="post" action="controller/login.php">
+              <form method="post" action="index.php?action=login">
                 <div class="form-group">
-                  <label for="alias">Pseudo</label>
-                  <input type="text" class="form-control" name="alias" placeholder="Pseudo">
+                  <label for="mail">Mail</label>
+                  <input type="text" class="form-control" name="mail" placeholder="Mail">
                 </div>
                 <div class="form-group">
-                  <label for="passwordForm">Mot de Passe</label>
+                  <label for="pass">Mot de Passe</label>
                   <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
                 </div>
               </div>

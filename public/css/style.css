@@ -1,37 +1,45 @@
 /*-----General-----*/
+.row {
+    margin-left: auto;
+    margin-right: auto;
+}
 
-.center{
+.center {
   align-items: center;
   justify-content: center;
 }
 
-.alignleft{
+.alignleft {
   text-align: right;
 }
 
-.sectionmargin{
+.sectionmargin {
   margin-bottom: 5em;
 }
 
-.sectionbackground{
+.sectionbackground {
   background-color: #343a40;
 }
 
-.paddingtop{
+.marginlist {
+  margin-bottom: 1em;
+}
+
+.paddingtop {
     padding-top: 9em;
 }
 
-.titlestyle{
-    margin-bottom: 2em;
+.titlestyle {
+    margin-bottom: 1em;
     text-align: center;;
 }
 
-.textcolor{
+.textcolor {
   color:#e9ecef;
 }
 /*-----Header-----*/
 
-.navbarfixed{
+.navbarfixed {
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -42,17 +50,17 @@
     z-index: -1;
 }
 
-.modal{
+.modal {
   margin-top: 8em;
 }
 
 /*-----Hero-----*/
 
-.herosection{
+.herosection {
   height: 100vh;
 }
 
-.hero{
+.hero {
   height: 100%;
   width: 100%;
   background-image: url(../pictures/ChugachMountains.jpg);
@@ -60,14 +68,25 @@
   background-size: cover;
 }
 
-.herocaption{
+.herocaption {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-#rowcard{
+.rowcard {
   justify-content: space-around;
 }
 
-/*-----Admin-----*/
+.card-img-top {
+  margin-top: 1em;
+  border-radius: .25rem;
+}
+
+.marginheader {
+  margin-left: 0.4em;
+}
+
+.pheader {
+  margin-bottom: 0rem;
+}
