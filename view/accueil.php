@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <!--Head-->
@@ -9,7 +10,6 @@
   <body class="sectionbackground">
     <!--Header-->
     <?php
-      session_start();
       if (isset($_SESSION['alias'])) {
         if ($_SESSION['admin'] == 1) {
           require'adminheader.php';
