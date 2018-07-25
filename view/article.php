@@ -52,7 +52,7 @@
           <?php while($c = $commentary->fetch()) { ?>
           <div class="card">
             <div class="card-header">
-              <?= $c['alias_user'] ?>
+              <?= $c['alias'] ?>
             </div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">

@@ -30,15 +30,15 @@
             <div class="modal-body">
               <form method="post" action="index.php?action=signin">
                 <div class="form-group">
-                  <label for="alias">Pseudo</label>
+                  <label>Pseudo</label>
                   <input type="text" class="form-control" name="alias" placeholder="Pseudo">
                 </div>
                 <div class="form-group">
-                  <label for="emailForm">Adresse Email</label>
+                  <label>Adresse Email</label>
                   <input type="email" class="form-control" name="mail" aria-describedby="emailHelp" placeholder="Adresse Email">
                 </div>
                 <div class="form-group">
-                  <label for="passwordForm">Mot de Passe</label>
+                  <label>Mot de Passe</label>
                   <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
                 </div>
               </div>
@@ -61,11 +61,11 @@
             <div class="modal-body">
               <form method="post" action="index.php?action=login">
                 <div class="form-group">
-                  <label for="mail">Mail</label>
+                  <label>Mail</label>
                   <input type="text" class="form-control" name="mail" placeholder="Mail">
                 </div>
                 <div class="form-group">
-                  <label for="pass">Mot de Passe</label>
+                  <label>Mot de Passe</label>
                   <input type="password" class="form-control" name="pass" placeholder="Mot de Passe">
                 </div>
               </div>

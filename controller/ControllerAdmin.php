@@ -37,7 +37,7 @@ class ControllerAdmin {
     require'model/Post.php';
     $deletelist = new Post();
     $post = $deletelist->listPost();
-    require'/view/deletescreen.php';
+    require'view/deletescreen.php';
   }
 
   public function deletePost() {

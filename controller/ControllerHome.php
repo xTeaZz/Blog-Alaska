@@ -30,7 +30,7 @@
       $post = $getpost->getPost();
       $getcomment = new Commentary();
       $commentary = $getcomment->listCommentary();
-      require'/view/article.php';
+      require'view/article.php';
     }
 
     public function getLastPosts() {

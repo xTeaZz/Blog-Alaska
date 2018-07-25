@@ -8,7 +8,7 @@
       $database = new Database;
       $db = $database->getConnection();
       $post_id = htmlspecialchars($_GET['id']);
-      $commentary = $db->prepare('SELECT * FROM comment WHERE id_post = ? ORDER BY id DESC');
+      $commentary = $db->prepare('SELECT *, user.alias FROM comment LEFT JOIN user ON comment.id_user=user.id WHERE id_post = ? ORDER BY comment.id DESC');
       $commentary->execute(array($post_id));
       return $commentary;
     }
@@ -25,14 +25,14 @@
       session_start();
       $database = new Database;
       $db = $database->getConnection();
-      if (isset($_SESSION['alias'])) {
+      if (isset($_SESSION['id'])) {
         if (isset($_POST['comment'])) {
           if(!empty($_POST['comment'])){
             $post_commentary = htmlspecialchars($_POST['comment']);
             $post_id = ($_GET['id']);
-            $useralias= ($_SESSION['alias']);
-            $insert = $db->prepare('INSERT INTO comment(alias_user, id_post, comment_text, comment_date) VALUES (?, ?, ?, NOW())');
-            $result = $insert->execute(array($useralias, $post_id, $post_commentary));
+            $userid= ($_SESSION['id']);
+            $insert = $db->prepare('INSERT INTO comment(id_user, id_post, comment_text, comment_date) VALUES (?, ?, ?, NOW())');
+            $result = $insert->execute(array($userid, $post_id, $post_commentary));
 
             $info = "Votre commentaire a bien était crée";
           }
