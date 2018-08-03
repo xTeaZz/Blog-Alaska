@@ -13,9 +13,6 @@
         <li class="nav-item">
           <a class="nav-link" href="?action=bio">Jean Forteroche<span class="sr-only"></span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php#contact">Contact</a>
-        </li>
       </ul>
     </div>
       <p class="textcolor pheader">Bonjour <?=$_SESSION['alias']?></p>

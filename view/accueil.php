@@ -54,23 +54,6 @@
         <a class="btn btn-primary btn-lg" href="?action=bio" role="button">Lire la suite</a>
       </div>
     </section>
-    <!--Contact-->
-    <section id="contact" class="container sectionmargin">
-      <h1 class="titlestyle textcolor">Formulaire de Contact</h1>
-      <form action="model/mail.php" method="post">
-        <div class="form-group">
-          <label for="exampleFormControlInput1" class="textcolor">Adresse Email</label>
-          <input name="mail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Adresse Email">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1" class="textcolor">Message</label>
-          <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Votre Message"></textarea>
-        </div>
-        <div class="form-group alignleft">
-          <button type="submit" class="btn btn-primary" name="button">Envoyer</button>
-        </div>
-      </form>
-    </section>
     <!--Footer-->
     <?php require'footer.php' ?>
   </body>

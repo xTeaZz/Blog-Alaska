@@ -4,6 +4,8 @@
 
   class Commentary extends Database {
 
+    /*Permet de lister les commentaires fait une liaison avec la table utilisateur pour récuperer les pseudos*/
+
     public function listCommentary() {
       $database = new Database;
       $db = $database->getConnection();
@@ -13,6 +15,8 @@
       return $commentary;
     }
 
+/*Permet de lister les commentaires signaler*/
+
     public function listReportedCommentary() {
       $database = new Database;
       $db = $database->getConnection();
@@ -20,6 +24,8 @@
       $commentary->execute();
       return $commentary;
     }
+
+/*Permet de crée un commentaire*/
 
     public function createCommentary() {
       session_start();
@@ -49,6 +55,8 @@
       }
     }
 
+/*Permet de supprimer un commentaire*/
+
     public function deleteCommentary() {
       $database = new Database;
       $db = $database->getConnection();
@@ -68,6 +76,8 @@
       }
     }
 
+    /*Permet de valider un commentaire*/
+
     public function validateCommentary() {
       $database = new Database;
       $db = $database->getConnection();
@@ -86,6 +96,8 @@
         echo $info;
       }
     }
+
+    /*Permet de signaler un commentaire*/
 
     public function reportCommentary() {
       $database = new Database;

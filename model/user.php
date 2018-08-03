@@ -4,12 +4,16 @@
 
   class User extends Database {
 
+    /*Permet de deconnecter l'utilisateur*/
+
     public function disconnect() {
       session_start();
       $_SESSION = array();
       session_destroy();
       header('Location: index.php');
     }
+
+    /*Permet de connecter un utilisateur*/
 
     public function loginUser() {
       $database = new Database;
@@ -43,6 +47,8 @@
           echo "Un problème est surevenu";
         }
       }
+
+      /*Permet d'enregistrer un utilisateur*/
 
     public function sign() {
       $database = new Database;

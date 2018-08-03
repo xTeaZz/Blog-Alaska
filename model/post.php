@@ -4,6 +4,8 @@
 
   class Post extends Database {
 
+    /*Permet de recuperer un article*/
+
     public function getPost() {
       $database = new Database;
       $db = $database->getConnection();
@@ -19,6 +21,8 @@
       }
       return $post;
     }
+
+    /*Permet de crée un article*/
 
     public function createPost() {
       $database = new Database;
@@ -37,10 +41,11 @@
         }
       }
       if (isset($info)) {
-        header('Location: index.php');
         echo $info;
       }
     }
+
+    /*Permet de modifier un article*/
 
     public function updatePost() {
       $database = new Database;
@@ -60,11 +65,12 @@
         }
       }
       if (isset($info)) {
-        header('Location: index.php');
         echo $info;
 
       }
     }
+
+    /*Permet de lister les articles*/
 
     public function listPost() {
       $database = new Database;
@@ -73,12 +79,16 @@
       return $post;
     }
 
+    /*Permet de récuperer les trois article les plus récent*/
+
     public function getLastPosts() {
       $database = new Database;
       $db = $database->getConnection();
       $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3');
       return $post;
     }
+
+    /*Permet de supprimer un article*/
 
     public function deletePost() {
       $database = new Database;
@@ -98,7 +108,6 @@
         $info = "Une erreur est survenue";
       }
       if (isset($info)) {
-        header('Location: index.php');
         echo $info;
       }
     }
