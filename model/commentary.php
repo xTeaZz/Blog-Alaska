@@ -9,9 +9,9 @@
     public function listCommentary() {
       $database = new Database;
       $db = $database->getConnection();
-      $post_id = htmlspecialchars($_GET['id']);
-      $commentary = $db->prepare('SELECT *, user.alias FROM comment LEFT JOIN user ON comment.id_user=user.id WHERE id_post = ? ORDER BY comment.id DESC');
-      $commentary->execute(array($post_id));
+      $postId = htmlspecialchars($_GET['id']);
+      $commentary = $db->prepare('SELECT * FROM comment INNER JOIN user ON comment.id_user = user.id WHERE id_post = ? ORDER BY comment.id DESC');
+      $commentary->execute(array($postId));
       return $commentary;
     }
 
@@ -34,11 +34,11 @@
       if (isset($_SESSION['id'])) {
         if (isset($_POST['comment'])) {
           if(!empty($_POST['comment'])){
-            $post_commentary = htmlspecialchars($_POST['comment']);
-            $post_id = ($_GET['id']);
+            $postCommentary = htmlspecialchars($_POST['comment']);
+            $postId = ($_GET['id']);
             $userid= ($_SESSION['id']);
             $insert = $db->prepare('INSERT INTO comment(id_user, id_post, comment_text, comment_date) VALUES (?, ?, ?, NOW())');
-            $result = $insert->execute(array($userid, $post_id, $post_commentary));
+            $result = $insert->execute(array($userid, $postId, $postCommentary));
 
             $info = "Votre commentaire a bien était crée";
           }
@@ -61,10 +61,10 @@
       $database = new Database;
       $db = $database->getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
-        $delete_comment = htmlspecialchars($_GET['id']);
+        $deleteComment = htmlspecialchars($_GET['id']);
 
         $delete = $db->prepare('DELETE FROM comment WHERE id = ?');
-        $delete->execute(array($delete_comment));
+        $delete->execute(array($deleteComment));
 
         $info = "Votre commentaire a bien était supprimer";
       }
@@ -82,10 +82,10 @@
       $database = new Database;
       $db = $database->getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
-        $report_id = htmlspecialchars($_GET['id']);
+        $reportId = htmlspecialchars($_GET['id']);
 
         $report = $db->prepare('UPDATE comment SET report = 0 WHERE id = ?');
-        $report->execute(array($report_id));
+        $report->execute(array($reportId));
 
         $info = "Votre commentaire a bien était valider";
       }
@@ -103,10 +103,10 @@
       $database = new Database;
       $db = $database->getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
-        $report_id = htmlspecialchars($_GET['id']);
+        $reportId = htmlspecialchars($_GET['id']);
 
         $report = $db->prepare('UPDATE comment SET report = 1 WHERE id = ?');
-        $report->execute(array($report_id));
+        $report->execute(array($reportId));
 
         $info = "Votre commentaire a bien était signaler";
       }
