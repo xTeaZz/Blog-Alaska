@@ -7,8 +7,7 @@
     /*Permet de lister les commentaires fait une liaison avec la table utilisateur pour récuperer les pseudos*/
 
     public function listCommentary() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       $postId = htmlspecialchars($_GET['id']);
       $commentary = $db->prepare('SELECT * FROM comment INNER JOIN user ON comment.id_user = user.id WHERE id_post = ? ORDER BY comment.id DESC');
       $commentary->execute(array($postId));
@@ -18,8 +17,7 @@
 /*Permet de lister les commentaires signaler*/
 
     public function listReportedCommentary() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       $commentary = $db->prepare('SELECT * FROM comment WHERE report = 1 ORDER BY id_post');
       $commentary->execute();
       return $commentary;
@@ -29,8 +27,7 @@
 
     public function createCommentary() {
       session_start();
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if (isset($_SESSION['id'])) {
         if (isset($_POST['comment'])) {
           if(!empty($_POST['comment'])){
@@ -58,8 +55,7 @@
 /*Permet de supprimer un commentaire*/
 
     public function deleteCommentary() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
         $deleteComment = htmlspecialchars($_GET['id']);
 
@@ -79,8 +75,7 @@
     /*Permet de valider un commentaire*/
 
     public function validateCommentary() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
         $reportId = htmlspecialchars($_GET['id']);
 
@@ -100,8 +95,7 @@
     /*Permet de signaler un commentaire*/
 
     public function reportCommentary() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
         $reportId = htmlspecialchars($_GET['id']);
 

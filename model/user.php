@@ -16,9 +16,7 @@
     /*Permet de connecter un utilisateur*/
 
     public function loginUser() {
-      $database = new Database;
-      $db = $database->getConnection();
-
+      $db = Database::getConnection();
       if(isset($_POST['buttonLogin'])) {
         $mail = htmlspecialchars($_POST['mail']);
         $pass = ($_POST['pass']);
@@ -51,8 +49,7 @@
       /*Permet d'enregistrer un utilisateur*/
 
     public function sign() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if(isset($_POST['buttonSign'])) {
         if(!empty($_POST['alias']) AND !empty($_POST['mail']) AND !empty($_POST['pass'])) {
           $alias = htmlspecialchars($_POST['alias']);

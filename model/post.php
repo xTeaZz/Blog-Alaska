@@ -7,8 +7,7 @@
     /*Permet de recuperer un article grace a l'id de la barre de navigation*/
 
     public function getPost() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])){
         $getId = htmlspecialchars($_GET['id']);
         $post = $db->prepare('SELECT * FROM post WHERE id = ?');
@@ -25,8 +24,7 @@
     /*Permet de crée un article*/
 
     public function createPost() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if (isset($_POST['title'], $_POST['postText'])) {
         if(!empty($_POST['title']) AND !empty($_POST['postText'])){
           $postTitle = htmlspecialchars($_POST['title']);
@@ -48,8 +46,7 @@
     /*Permet de modifier un article il récupere les informations de l'article puis les modifie*/
 
     public function updatePost() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if (isset($_POST['title'], $_POST['postText'])) {
         if(!empty($_POST['title']) AND !empty($_POST['postText'])){
           if(isset($_GET['id']) AND !empty($_GET['id'])) {
@@ -73,8 +70,7 @@
     /*Permet de lister les articles*/
 
     public function listPost() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       $post = $db->query('SELECT * FROM post ORDER BY id DESC');
       return $post;
     }
@@ -82,8 +78,7 @@
     /*Permet de récuperer les trois article les plus récent*/
 
     public function getLastPosts() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       $post = $db->query('SELECT * FROM post ORDER BY id DESC LIMIT 3');
       return $post;
     }
@@ -91,8 +86,7 @@
     /*Permet de supprimer un article*/
 
     public function deletePost() {
-      $database = new Database;
-      $db = $database->getConnection();
+      $db = Database::getConnection();
       if(isset($_GET['id']) AND !empty($_GET['id'])) {
         $delete_post = htmlspecialchars($_GET['id']);
 
