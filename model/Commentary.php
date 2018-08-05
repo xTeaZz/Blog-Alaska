@@ -9,7 +9,7 @@
     public function listCommentary() {
       $db = Database::getConnection();
       $postId = htmlspecialchars($_GET['id']);
-      $commentary = $db->prepare('SELECT * FROM comment INNER JOIN user ON comment.id_user = user.id WHERE id_post = ? ORDER BY comment.id DESC');
+      $commentary = $db->prepare('SELECT *, comment.id AS c_id FROM comment INNER JOIN user ON comment.id_user = user.id WHERE id_post = ? ORDER BY comment.id DESC');
       $commentary->execute(array($postId));
       return $commentary;
     }

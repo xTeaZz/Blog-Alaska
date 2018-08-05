@@ -57,7 +57,7 @@
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p><?= $c['comment_text'] ?></p>
-                <a href="index.php?action=report&id=<?= $c['id'] ?>" class="btn btn-danger">Signaler</a>
+                <a href="index.php?action=report&id=<?= $c['c_id'] ?>" class="btn btn-danger">Signaler</a>
               </blockquote>
             </div>
           </div>
